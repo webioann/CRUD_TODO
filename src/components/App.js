@@ -1,10 +1,12 @@
-import React from 'react';
+import React,{ useState} from 'react';
+import { items } from '../data/dataItems';
+import ListItems from './ListItems';
 import './app.less'
 
 function App() {
     return (
         <div className='container'>
-            <h1>HELLO_CRUD_REACT_TODO</h1>
+            <ListItems items={items}/>
         </div>
     )
 }
