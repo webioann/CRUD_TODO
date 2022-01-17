@@ -12,7 +12,7 @@ module.exports = {
         path: path.resolve( __dirname,"dist" ),
     },
     devServer: {
-        port: 3001,
+        port: 7001,
     },
     plugins: [
         new HTMLWebpackPlugin({ template : 'src/index.html' }),
@@ -31,6 +31,10 @@ module.exports = {
             {
                 test: /\.(s[ac]|c)ss$/i,
                 use:[MiniCssExtractPlugin.loader,'css-loader','postcss-loader','sass-loader' ]
+            },
+            {
+                test: /\.less$/i,
+                use:[MiniCssExtractPlugin.loader,'css-loader','postcss-loader','less-loader' ]
             },
             {
                 test: /\.(js|jsx)$/,
