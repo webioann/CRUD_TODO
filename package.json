@@ -1,0 +1,41 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "CRUD_REACT_TODO",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack server --open --hot --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "webioann",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "autoprefixer": "^10.3.4",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.2.0",
+    "postcss": "^8.3.6",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^6.7.0",
+    "sass": "^1.38.1",
+    "sass-loader": "^12.1.0",
+    "terser-webpack-plugin": "^5.1.4",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1"
+  }
+}
