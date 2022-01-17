@@ -1,0 +1,37 @@
+@import 'vars';
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: @gut;
+    box-shadow: @shadow;
+    // border: 2px solid #bbb;
+    border-radius: @round_2;
+    margin-top: @gut;
+    .icon{
+        color: @carrot;
+        margin-right: @gut;
+        margin-left: @gut;
+        font-size: 2rem;
+        cursor: pointer;
+        &:hover{
+            color: darken(@carrot,10);
+        }
+    }
+    .todo-through{
+        text-decoration: underline;
+    }
+    .todo{
+        text-decoration: none;
+    }
+}
+.empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: @gut;
+    box-shadow: @shadow;
+    border-radius: @round_2;
+    margin-top: @gut;
+}
