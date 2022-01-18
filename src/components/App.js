@@ -5,31 +5,34 @@ import Input from './Input';
 import './app.less'
 
 function App() {
-    const [todos,setTodos] = useState(items)
+    // const [todos,setTodos] = useState(items)
+    const [todos,setTodos] = useState(JSON.parse(localStorage.getItem('TODOS')))
     const [inputValue,setInputValue] = useState('')
 
+    const update = (updatedTodos) => {
+        setTodos(updatedTodos)
+        localStorage.setItem('TODOS',JSON.stringify(updatedTodos))    
+    }
+
     const checkTodo = (id) => {
-        let clicked = todos.map(todo => todo.id === id ? {...todo,checked: !todo.checked} : todo)
-        setTodos(clicked)
-        localStorage.setItem('TODOS',JSON.stringify(clicked))    
+        let updatedTodos = todos.map(todo => todo.id === id ? {...todo,checked: !todo.checked} : todo)
+        update(updatedTodos)
     }
     const deleteTodo = (id) => {
-        let deleted = todos.filter(todo => todo.id !== id )
-        setTodos(deleted)
-        localStorage.setItem('TODOS',JSON.stringify(deleted))    
+        let updatedTodos = todos.filter(todo => todo.id !== id )
+        update(updatedTodos)
     }
     const addNewTodo = (todo) => {
         let id = todos.length ? todos[todos.length - 1].id + 1 : 1;
         let newTodo = { id,checked: false,todo}
         let updatedTodos = [...todos,newTodo]
-        setTodos(updatedTodos)
+        update(updatedTodos)
     }
     const onSubmit = (event) => {
         event.preventDefault();
         if(!inputValue) return;
         setInputValue('');
         addNewTodo(inputValue)
-        console.log(`VALUE --> ${inputValue}`);
     }
 
     return (
