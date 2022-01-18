@@ -1,4 +1,5 @@
 @import 'vars';
+
 .form{
     display: flex;
     align-items: center;
@@ -11,6 +12,17 @@
         padding: 5px;
         outline: none;
     }
+    #search{
+        font-size: 1rem;
+        min-width: calc(50% + 60px);
+        max-width: 100%;
+        border: 1px solid rgba(0,0,0,0.3);
+        border-radius: @round_5;
+        padding: 5px;
+        outline: none;
+        margin-top: 10px;
+    }
+
     .submit{
         color: @carrot;
         &:hover{
