@@ -4,7 +4,7 @@ import Input from './Input';
 import SearchTodo from './SearchTodo';
 import './app.less'
 
-function App_CRUD() {
+function App() {
 
     const [inputValue,setInputValue] = useState('');
     const [searchValue,setSearchValue] = useState('');
@@ -73,4 +73,4 @@ function App_CRUD() {
         </div>
     )
 }
-export default App_CRUD;
+export default App;
