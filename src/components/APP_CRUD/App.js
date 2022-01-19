@@ -11,7 +11,7 @@ function App() {
     const [data,setData] = useState([])
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
-    const API_URL = 'https://jsonplaceholder.typicode.com/todos?_limit=5';
+    const API_URL = 'https://jsonplaceholder.typicode.com/todos?_limit=5/';
 
     useEffect(() => {
         try{

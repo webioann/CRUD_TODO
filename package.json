@@ -4,6 +4,7 @@
   "description": "CRUD_REACT_TODO",
   "main": "index.js",
   "scripts": {
+    "server": "json-server --watch server/data.json --port 888",
     "start": "webpack server --open --hot --mode development",
     "build": "webpack --mode production",
     "watch": "webpack --watch"
@@ -22,6 +23,7 @@
     "css-loader": "^6.2.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "json-server": "^0.17.0",
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
     "mini-css-extract-plugin": "^2.2.0",
