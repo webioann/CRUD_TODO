@@ -1,17 +1,17 @@
 import React from 'react';
 import Todo from './Todo';
 import EmptyTodo from './EmptyTodo';
-import './list-items.less'
+import './list.less'
 
-function ListItems({ todos,checkTodo,deleteTodo}) {
+function List({ todos,checkTodo,deleteTodo }) {
 
     return (
         <ul className='list'>
             {(todos.length > 0) ? (
                 <Todo 
-                todos={todos}
-                checkTodo={checkTodo}
-                deleteTodo={deleteTodo}
+                    todos={todos}
+                    checkTodo={checkTodo}
+                    deleteTodo={deleteTodo}
                 />
             ) : (
                 <EmptyTodo/>
@@ -19,4 +19,4 @@ function ListItems({ todos,checkTodo,deleteTodo}) {
         </ul>
     )
 }
-export default ListItems;
+export default List;

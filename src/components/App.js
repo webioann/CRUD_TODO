@@ -1,9 +1,5 @@
 import React,{ useState,useEffect } from 'react';
-// import { todos } from '../data/todoData';
 import List from './List';
-import Todo from './Todo';
-import EmptyTodo from './EmptyTodo';
-
 import Input from './Input';
 import SearchTodo from './SearchTodo';
 import './app.less'
@@ -13,15 +9,10 @@ function App() {
     const [todos,setTodos] = useState(JSON.parse(localStorage.getItem('TODOS')) ||[]);
     const [inputValue,setInputValue] = useState('');
     const [searchValue,setSearchValue] = useState('');
-    const URL = 'http://localhost:7007/todos'
 
     useEffect(() => {
         localStorage.setItem('TODOS',JSON.stringify(todos));
     },[todos])
-
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
-
 
     const checkTodo = (id) => {
         let updatedTodos = todos.map(todo => todo.id === id ? {...todo,checked: !todo.checked} : todo);
@@ -79,23 +70,22 @@ export default App
     //     .finally(() => {setLoading(false)})
 
 
-        // const fetchData = async () => {
-        //     try {
-        //         const response = await fetch(URL);
-        //         // if (!response.ok) throw Error('CATCH ERROR');
-        //         const data = await response.json();
-        //         setTodos(data);
-        //         console.log(`DATA --> ${data}`);
-        //         // setLoading(false);
-        //         // setError(null);
-        //     } catch (err) {
-        //         console.log(`ERROR --> ${err.stack}`);
-        //         // setError(err.message);
-        //     }
-        //     //  finally {
-        //     //     setLoading(false);
-        //     // }
-        // }
-        // (async () => await fetchData())();
-        // fetchData()
-    // }, [])
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //     try {
+    //         const response = await fetch(API_URL);
+    //         if (!response.ok) throw Error('CATCH ERROR');
+    //         const data = await response.json();
+    //         setData(data);
+    //         // setLoading(false);
+    //         // setError(null);
+    //     } catch (err) {
+    //         console.log(`ERROR --> ${err.stack}`);
+    //         // setError(err.message);
+    //     }
+    //     finally {
+    //         setLoading(false);
+    //     }
+    //     }
+    //     fetchData()
+    // },[])
