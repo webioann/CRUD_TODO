@@ -33,12 +33,11 @@ function App() {
             setLoading(false)
         }
     },[])
-
+    // ===== PATCH ========================
     const checkTodo = (id) => {
         let updatedTodos = data.map(todo => todo.id === id ? {...todo,checked: !todo.checked} : todo);
         setData(updatedTodos)
         const checkedTodo = updatedTodos.filter(todo => todo.id === id)
-
         const options = {
             method: 'PATCH',
             body: JSON.stringify({ checked: checkedTodo[0].checked }),
@@ -49,15 +48,15 @@ function App() {
         const newURL = `${URL}/${id}`
         const raw = useRequest(newURL,options)
     }
+    // ===== DELETE ========================
     const deleteTodo = (id) => {
         let updatedTodos = data.filter(todo => todo.id !== id );
         setData(updatedTodos);
-
         const options = { method: 'DELETE' }
         const newURL = `${URL}/${id}`
         const raw = useRequest(newURL,options)
-
     }
+    // ===== POST =====================
     const addNewTodo = (title) => {
         let id = data.length ? data[data.length - 1].id + 1 : 1;
         let newTodo = { id,checked: false,title}
@@ -73,6 +72,7 @@ function App() {
         }
         const raw = useRequest(URL,options)
     }
+    // ===== ===================
     const onSubmit = (event) => {
         event.preventDefault();
         if(!inputValue) return;
